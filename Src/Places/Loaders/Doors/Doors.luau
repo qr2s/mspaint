@@ -465,11 +465,11 @@ function Script.Functions.UpdateRPC()
     end
 
     wax.shared.BloxstrapRPC.SetRichPresence({
-        details = "Playing DOORS [ mspaint v3 ]",
+        details = "Playing DOORS [ mspaint v2 - DISCONTINUED ]",
         state = roomNumberPrefix .. prettifiedRoomNumber .. " (" .. if Script.PrettyFloorName[Script.Floor.Value] then Script.PrettyFloorName[Script.Floor.Value] else ("The " .. Script.Floor.Value)  .. ")",
         largeImage = {
             assetId = Script.FloorImages[Script.Floor.Value] or 16875079348,
-            hoverText = "Using mspaint v3"
+            hoverText = "Using mspaint v2 - DISCONTINUED"
         },
         smallImage = {
             assetId = 6925817108,

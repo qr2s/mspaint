@@ -4,7 +4,7 @@ local Linoria = require("Notifiers/Linoria")
 local Doors = require("Notifiers/Doors")
 
 function Notify:Notify(options)
-    if shared.NotifyStyle == "Linoria" then
+    if shared.NotifyStyle == "Linoria" or options.ForceLinoria == true then
         local linoriaMessage = options["LinoriaMessage"] or options.Description
         options.Description = linoriaMessage
 
@@ -16,7 +16,7 @@ function Notify:Notify(options)
 end
 
 function Notify:Alert(options)
-    if shared.NotifyStyle == "Linoria" then
+    if shared.NotifyStyle == "Linoria" or options.ForceLinoria == true then
         local linoriaMessage = options["LinoriaMessage"] or options.Description
         options.Description = linoriaMessage
 

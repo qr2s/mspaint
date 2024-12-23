@@ -24,10 +24,10 @@ function Script.Functions.UpdateBloxstrapRPC()
     if not wax.shared.BloxstrapRPC then return end
 
     wax.shared.BloxstrapRPC.SetRichPresence({
-        details = "Playing " .. Script.GameName .. " [ mspaint v3 ]",
+        details = "Playing " .. Script.GameName .. " [ mspaint v2 - DISCONTINUED ]",
         state = #shared.Players:GetPlayers() .. " players in the server",
         largeImage = {
-            hoverText = "Using mspaint v3"
+            hoverText = "Using mspaint v2 - DISCONTINUED"
         },
         smallImage = {
             assetId = 6925817108,
