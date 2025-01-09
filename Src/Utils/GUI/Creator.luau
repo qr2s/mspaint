@@ -17,7 +17,7 @@ end
 
 function UICreator:CreateWindow()
     local Window = shared.Library:CreateWindow({
-        Title = "mspaint v2 - DISCONTINUED (OUTDATED!) | " .. shared.ScriptName,
+        Title = "mspaint v2 - OUTDATED! | " .. shared.ScriptName,
         Center = true,
         AutoShow = true,
         Resizable = true,
