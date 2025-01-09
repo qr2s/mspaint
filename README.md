@@ -1,6 +1,6 @@
 # mspaint
 > [!IMPORTANT]
-> This script is now depericated
+> This script is now deprecated
 
 A decent script hub that *was* free and open source
 
