@@ -1,6 +1,6 @@
 # mspaint
 > [!IMPORTANT]
-> This script is now deprecated
+> This version is deprecated. Join our Discord server at https://mspaint.cc/ to get the new version.
 
 A decent script hub that *was* free and open source
 
