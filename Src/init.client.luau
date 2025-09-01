@@ -119,7 +119,18 @@ end
 local UICreator = require("Utils/GUI/Creator")
 shared.Window = UICreator:CreateWindow()
 
-require("Places/Loaders/" .. shared.ScriptLoader)
+local FinishedLoading = false
+local StartTime = tick()
+task.spawn(function()
+    require("Places/Loaders/" .. shared.ScriptLoader)
+    FinishedLoading = true
+end)
+
+repeat task.wait() until FinishedLoading or (tick() - StartTime) >= 2.5
+
+if not FinishedLoading then
+    UICreator:CreateTimeoutInfoTab()
+end
 
 UICreator:CreateSettingsTab()
 require("Utils/GUI/Addons")

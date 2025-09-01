@@ -1,6 +1,6 @@
 local UICreator = {}
 
-local repo = "https://raw.githubusercontent.com/deividcomsono/LinoriaLib/refs/heads/main/"
+local repo = "https://raw.githubusercontent.com/mstudio45/LinoriaLib/refs/heads/main/"
 
 shared.Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
 local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
@@ -57,6 +57,37 @@ function UICreator:CreateWindow()
     end)
 
     return Window
+end
+
+function UICreator:CreateTimeoutInfoTab()
+    local ErrorTab = shared.Window:AddTab("Error")
+    ErrorTab:UpdateWarningBox({
+        Visible = true,
+        Title = "mspaint - RUNTIME ERROR",
+        Text = "mspaint was unable to load in time (<b>ERROR: timeout</b>)\n\n<i>keep in mind that this is an outdated version and it is more likely that the fix is inside of the updated version.</i>"
+    })
+
+    local ResourcesGroup = ErrorTab:AddLeftGroupbox("Resources")
+    local ErrorInfoGroup = ErrorTab:AddRightGroupbox("Error Info")
+    ResourcesGroup:AddLabel("Discord Server: https://discord.gg/mspaint")
+    ResourcesGroup:AddDivider()
+    ResourcesGroup:AddButton("Join Discord", function()
+        local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua"))()
+        Inviter.Join("https://discord.com/invite/cfyMptntHr")
+        Inviter.Prompt({
+            name = "mspaint",
+            invite = "https://discord.com/invite/cfyMptntHr",
+        })
+    end):AddButton("Copy Link", function()
+        if setclipboard then
+            setclipboard("https://discord.com/invite/cfyMptntHr")
+            shared.Library:Notify("Copied discord link to clipboard!")
+        else
+            shared.Library:Notify("Discord link: https://discord.com/invite/cfyMptntHr", 10)
+        end
+    end)
+
+    ErrorInfoGroup:AddLabel("Timeout error usually means the game's owner has moved something to a different location which breaks the code that has already been written.\n\nDue to the fact that this open source version is discontinued, we will not be adding fixes.", true)
 end
 
 function UICreator:CreateSettingsTab()
